@@ -1,3 +1,33 @@
+<div
+  id="language-modal"
+  class="fixed inset-0 z-[100001] hidden items-center justify-center bg-black/60 px-4"
+>
+  <div
+    class="w-full max-w-md rounded-2xl bg-white p-6 text-center shadow-2xl"
+  >
+    <h2 class="text-2xl font-bold text-gray-900">Elige tu idioma</h2>
+    <p class="mt-2 text-sm text-gray-600">
+      Select your language to continue.
+    </p>
+    <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+      <button
+        type="button"
+        data-lang-modal="es"
+        class="rounded-full border border-gray-900 bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900"
+      >
+        Español
+      </button>
+      <button
+        type="button"
+        data-lang-modal="en"
+        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition hover:border-gray-900 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900"
+      >
+        English
+      </button>
+    </div>
+  </div>
+</div>
+
 <div class="fixed top-4 right-4 z-[100000] flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 px-3 py-2 shadow-lg backdrop-blur">
   <button
     type="button"

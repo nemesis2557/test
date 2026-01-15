@@ -235,6 +235,9 @@ import "../styles/global.css"
 			};
 
 			const languageButtons = document.querySelectorAll("[data-lang]");
+			const modalButtons = document.querySelectorAll("[data-lang-modal]");
+			const languageModal = document.getElementById("language-modal");
+
 			const applyLanguage = (lang) => {
 				const selected = translations[lang] ? lang : "es";
 				document.documentElement.lang = selected;
@@ -273,8 +276,23 @@ import "../styles/global.css"
 				});
 			});
 
+			modalButtons.forEach((button) => {
+				button.addEventListener("click", () => {
+					applyLanguage(button.getAttribute("data-lang-modal"));
+					if (languageModal) {
+						languageModal.classList.add("hidden");
+						languageModal.classList.remove("flex");
+					}
+				});
+			});
+
 			const storedLanguage = localStorage.getItem("language");
-			applyLanguage(storedLanguage || "es");
+			if (storedLanguage) {
+				applyLanguage(storedLanguage);
+			} else if (languageModal) {
+				languageModal.classList.remove("hidden");
+				languageModal.classList.add("flex");
+			}
 		</script>
 	</body>
 </html>
