@@ -1,0 +1,210 @@
+---
+const images = [
+  "/galeria/1g.webp",
+  "/galeria/2g.webp",
+  "/galeria/3g.webp",
+  "/galeria/4g.webp",
+  "/galeria/5g.webp",
+  "/galeria/6g.webp",
+  "/galeria/7g.webp",
+  "/galeria/8g.webp",
+  "/galeria/9g.webp",
+  "/galeria/10g.webp",
+  "/galeria/11g.webp",
+  "/galeria/12g.webp",
+  "/galeria/13g.webp",
+  "/galeria/14g.webp",
+  "/galeria/15g.webp",
+  "/galeria/16g.webp",
+  "/galeria/17g.webp",
+  "/galeria/18g.webp",
+  "/galeria/19g.webp",
+  "/galeria/20g.webp",
+  "/galeria/21g.webp",
+  "/galeria/22g.webp",
+  "/galeria/23g.webp",
+  "/galeria/24g.webp",
+  "/galeria/25g.webp",
+  "/galeria/26g.webp",
+  "/galeria/27g.webp",
+  "/galeria/28g.webp",
+  "/galeria/29g.webp",
+  "/galeria/30g.webp",
+  "/galeria/31g.webp",
+  "/galeria/32g.webp",
+  "/galeria/33g.webp",
+  "/galeria/34g.webp",
+  "/galeria/35g.webp"
+];
+---
+
+<style is:global>
+
+  #modal {
+    z-index: 9999 !important;
+  }
+  /* Masonry */
+  .masonry { column-count: 1; column-gap: 1rem; }
+  @media (min-width: 768px) { .masonry { column-count: 2; } }
+  @media (min-width: 1024px) { .masonry { column-count: 3; } }
+  .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+  .masonry-img { width: 100%; border-radius: 12px; transition: .3s; cursor: pointer; }
+  .masonry-img:hover { transform: scale(1.03); opacity: 0.9; }
+
+  /* Modal */
+  #modal {
+    background: rgba(0,0,0,0.8);
+    animation: fadeIn .25s ease-out;
+  }
+  .modal-img {
+    animation: zoom .25s ease-out;
+  }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes zoom { from { transform:scale(.8); opacity:0; } to { transform:scale(1); opacity:1; } }
+</style>
+
+<section class="w-full px-4 py-10 max-w-6xl mx-auto">
+  <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Galería</h1>
+
+  <div id="gallery" class="masonry">
+    {images.map((src) => (
+      <div class="masonry-item">
+        <img src={src} data-img={src} class="masonry-img" loading="lazy" />
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 hidden z-20 flex items-center justify-center ">
+
+  <button id="closeBtn" class="absolute top-6 right-6 text-white text-4xl">×</button>
+  <button id="prevBtn" class="absolute left-6 text-white text-5xl">‹</button>
+
+  <img id="modalImg" class="modal-img max-h-[85vh] max-w-[90vw] rounded-lg shadow-xl" />
+
+  <button id="nextBtn" class="absolute right-6 text-white text-5xl">›</button>
+</div>
+
+<script type="module">
+document.addEventListener("DOMContentLoaded", () => {
+  // Tomamos el contenedor (delegation) y las referencias del modal
+  const gallery = document.getElementById("gallery");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementById("closeBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  // Lista de imágenes (la misma que usas para renderizar)
+  const images = [
+    "/galeria/1g.webp",
+    "/galeria/2g.webp",
+    "/galeria/3g.webp",
+    "/galeria/4g.webp",
+    "/galeria/5g.webp",
+    "/galeria/6g.webp",
+    "/galeria/7g.webp",
+    "/galeria/8g.webp",
+    "/galeria/9g.webp",
+    "/galeria/10g.webp",
+    "/galeria/11g.webp",
+    "/galeria/12g.webp",
+    "/galeria/13g.webp",
+    "/galeria/14g.webp",
+    "/galeria/15g.webp",
+    "/galeria/16g.webp",
+    "/galeria/17g.webp",
+    "/galeria/18g.webp",
+    "/galeria/19g.webp",
+    "/galeria/20g.webp",
+    "/galeria/21g.webp",
+    "/galeria/22g.webp",
+    "/galeria/23g.webp",
+    "/galeria/24g.webp",
+    "/galeria/25g.webp",
+    "/galeria/26g.webp",
+    "/galeria/27g.webp",
+    "/galeria/28g.webp",
+    "/galeria/29g.webp",
+    "/galeria/30g.webp",
+    "/galeria/31g.webp",
+    "/galeria/32g.webp",
+    "/galeria/33g.webp",
+    "/galeria/34g.webp",
+    "/galeria/35g.webp"
+
+  ];
+
+  // Estado actual
+  let current = 0;
+
+  function openModal(index) {
+    current = index;
+    modalImg.src = images[current];
+    modal.classList.remove("hidden");
+    // opcional: dar foco al botón cerrar para accesibilidad
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    modalImg.src = "";
+  }
+
+  function next() {
+    current = (current + 1) % images.length;
+    modalImg.src = images[current];
+  }
+
+  function prev() {
+    current = (current - 1 + images.length) % images.length;
+    modalImg.src = images[current];
+  }
+
+  // Event delegation: escuchamos clicks en el contenedor gallery
+  gallery.addEventListener("click", (e) => {
+    // buscamos el elemento que tenga data-img (puede ser el img u otro)
+    const img = e.target.closest("[data-img]");
+    if (!img) return;
+    // determinamos el índice en la lista images
+    const src = img.getAttribute("data-img");
+    const index = images.indexOf(src);
+    if (index === -1) return;
+    openModal(index);
+  });
+
+  // Hacer que cada imagen sea focusable y abra con Enter / Space (si tus imágenes no tienen tabindex, las añadimos aquí)
+  // Nota: si renderizas las imágenes en el HTML, añade tabindex="0" y role="button" directamente en el markup.
+  document.querySelectorAll("[data-img]").forEach((imgEl) => {
+    imgEl.setAttribute("tabindex", "0");
+    imgEl.setAttribute("role", "button");
+    imgEl.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter" || ev.key === " ") {
+        ev.preventDefault();
+        const src = imgEl.getAttribute("data-img");
+        const index = images.indexOf(src);
+        if (index !== -1) openModal(index);
+      }
+    });
+  });
+
+  // Botones del modal
+  closeBtn.addEventListener("click", closeModal);
+  nextBtn.addEventListener("click", next);
+  prevBtn.addEventListener("click", prev);
+
+  // Cerrar si clickeas el backdrop (fuera de la imagen)
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Teclado global para modal
+  document.addEventListener("keydown", (e) => {
+    if (modal.classList.contains("hidden")) return;
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+});
+</script>

@@ -1,0 +1,40 @@
+---
+import Cartas from "../components/Cartas.astro";
+import Efotos from "../components/Efotos.astro";
+import Sheader from "../components/Sheader.astro";
+import Layout from "../layouts/Layout.astro";
+import Dfooter from "../components/Dfooter.astro";
+import Contacto from "../components/Contacto.astro";
+import Galery from "../components/Galery.astro";
+---
+
+<Layout>
+  <div class="h-1/3">
+    <Sheader />
+  </div>
+
+  <section>
+    <article class="flex flex-col lg:flex-row min-h-screen">
+      <!-- Lado izquierdo -->
+      <div class="w-full lg:w-2/3 relative px-4 lg:px-20 pt-2">
+         <!-- ---esta pargte  es galeria ----- -->
+
+        <Galery/>
+        
+      </div>
+
+
+     
+      <!-- Lado derecho -->
+      <div
+        class="w-full lg:w-1/3 relative z-10 flex items-start justify-center"
+      >
+        <section class="w-full max-w-md px-4 py-32 text-gray-800 space-y-10">
+          <Contacto />
+        </section>
+      </div>
+    </article>
+  </section>
+
+  <Dfooter />
+</Layout>

@@ -1,0 +1,46 @@
+---
+import Sheader from '../components/Sheader.astro';
+import Layout from '../layouts/Layout.astro';
+import Dfooter from '../components/Dfooter.astro';
+import Padrino from '../components/Padrino.astro';
+import Contacto from '../components/Contacto.astro';
+---
+<Layout>
+    <div class="h-1/3">
+      <Sheader></Sheader>
+    </div>
+  
+    <section class="min-h-screen flex flex-col">
+      <article class="flex flex-col lg:flex-row flex-1 text-base sm:text-lg items-start">
+        <!-- Lado izquierdo: 2/3 del ancho -->
+        <div class="w-full lg:w-2/3 relative z-10 m-4 lg:m-10 pt-10 ">
+         
+  
+          <div>
+            <Padrino
+              textcolor="text-black"
+              img="/fotos1/ocho.jpeg"
+              img1="/fotos1/trece.jpeg"
+              img2="/fotos1/doce.jpeg"
+              img3="/fotos1/dies.jpeg"
+              img4="/fotos1/nuevo.jpeg"
+              img5="/fotos1/dos.jpeg"
+            />
+          </div>
+        </div>
+        
+        <!-- Lado derecho: 1/3 del ancho -->
+        <div class="w-full lg:w-1/3 relative z-10 flex items-center justify-center mt-4 lg:mt-42 ">
+          <section class="w-[90%] lg:w-[70%] mx-auto px-4 text-gray-800 space-y-6 lg:space-y-10">
+           <Contacto></Contacto>
+          </section>
+        </div>
+      </article>
+    </section>
+  
+    <!-- Asegurarse de que el pie de página esté al final -->
+    <div class="mt-20 lg:mt-40"></div>
+  
+    <Dfooter></Dfooter>
+  </Layout>
+  

@@ -1,0 +1,145 @@
+---
+import Cartas from "../components/Cartas.astro";
+import Efotos from "../components/Efotos.astro";
+import Sheader from "../components/Sheader.astro";
+import Layout from "../layouts/Layout.astro";
+import Dfooter from "../components/Dfooter.astro";
+import Padrino from "../components/Padrino.astro";
+import Contacto from "../components/Contacto.astro";
+import Ninos from "../components/Ninos.astro";
+---
+
+<Layout>
+  <div class="h-1/3">
+    <Sheader />
+  </div>
+
+  <section class="min-h-screen flex flex-col">
+    <article class="flex flex-col lg:flex-row flex-1 text-base sm:text-lg items-start">
+      <!-- Lado izquierdo: 2/3 del ancho -->
+      <div class="lg:w-2/3 relative z-10 m-4 lg:m-10 pt-10">
+        <section
+          class="w-[90%] lg:w-[70%] mx-auto px-4 py-6 text-gray-800 space-y-6 lg:space-y-10"
+        >
+          <!-- Título -->
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center">
+            APADRINAR
+          </h2>
+
+          <p>
+            Convertirte en patrocinador o padrino te permite ayudar a niños y
+            niñas muy vulnerables en zonas aledañas a los distrito de San
+            Jerónimo, Pampachiri, Oronccoy y lugares inhóspitos de la provincia
+            de Andahuaylas, departamento Apurímac en Perú.Somos una ONG
+            registrada en Perú y Estados Unidos y todas sus donaciones son
+            deducibles de impuestos.Comprométete a una donación mensual de al
+            menos $25.00 dólares y recibirás evidencias periódicas con
+            información actualizada sobre los niños que apadrina. Para esto, Ud.
+            recibirá una ficha en donde detallamos la historia, datos
+            personales, fotos e información necesaria que le permita conocer las
+            condiciones reales de vida de cada niño que espera por su donación.
+            Sino desea comprometerse con una donación mensual, podría ayudarnos
+            con alguna donación voluntaria - y/o bienes - los cuales serán
+            destinada a adquirir alimento, ropa, camas, colchones, frazadas y
+            mejorar la calidad de vida de uno de los niños o niñas con los que
+            trabajamos; compra que será evidenciada con fotos que serán enviadas
+            al donador.Hecho la donación, recibirás una carta con una carta de
+            agradecimiento y evidencia fotográfica que demuestra el destino de
+            su donación. Agradecemos su apoyo a nuestros niños y niñas en los
+            Andes peruanos que son entregadas íntegramente a sus padres o
+            apoderados. Nuestras oraciones están con ustedes y sus seres
+            queridos.
+          </p>
+          <p>
+            Contáctate con nosotros al correo, teléfono o email y solicite
+            información adicional y ayúdenos a ayudar.
+          </p>
+          <p>
+            <strong>Andean Christian Children</strong> es una organización registrada
+            en Perú y Estados Unidos, y todas las donaciones son deducibles de impuestos.
+          </p>
+          <p>Elige el tipo de patrocinador que deseas ser:</p>
+
+          <!-- <h3>Envía tu donación por correo a:</h3> -->
+          <p>
+            <strong>PERÚ</strong><br />
+            Jr. Bolognesi 514<br />
+            San Jerónimo - Andahuaylas - Apurímac
+          </p>
+          <p>
+            <strong>ESTADOS UNIDOS</strong><br />
+            Andean Christian Children<br />
+            329 Bishops Highway Kingston, MA 02365<br />
+            7270 Pierson Driver Mobile, AL 36619
+          </p>
+
+          <p>
+            Recibirás una carta con el recibo de impuestos. Muchas gracias por
+            tu apoyo a nuestros niños y sus familias en los Andes peruanos.
+            Nuestras oraciones están con ustedes y sus seres queridos.
+          </p>
+
+          
+        </section>
+
+        <section class="px-4 py-10 bg-white text-center">
+          <p class="text-sm text-gray-700 mb-6"></p>
+            <div class="grid grid-cols-1 md:grid-cols--8 gap-8 max-w-4xl mx-">
+            <Ninos nombre="" imagen="/misni/2new.jpg" />
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Ninos nombre="Lucero" imagen="/misni/1.jpg" />
+            <Ninos nombre="Milagros" imagen="/misni/2.jpg" />
+            <Ninos nombre="Jhair" imagen="/misni/3.jpg" />
+            <Ninos nombre="Brayan" imagen="/misni/4.jpg" />
+          </div>
+          <p class="mt-8"></p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Ninos nombre="Yadira" imagen="/misni/5.jpg" />
+            <Ninos nombre="Fiorella" imagen="/misni/6.jpg" />
+            <Ninos nombre="Cristian" imagen="/misni/7.jpg" />
+            <Ninos nombre="Gomer" imagen="/misni/8.jpg" />
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Ninos nombre="luis Ángel" imagen="/misni/9.jpg" />
+            <Ninos nombre="Renzo" imagen="/misni/10.jpg" />
+            <Ninos nombre="José" imagen="/misni/11.jpg" />
+            <Ninos nombre="" imagen="" />
+          </div>
+          <!-- </section>
+          <div>
+            <Padrino
+              textcolor="text-black"
+              img="/fotos1/ocho.jpeg"
+              img1="/fotos1/trece.jpeg"
+              img2="/fotos1/doce.jpeg"
+              img3="/fotos1/dies.jpeg"
+              img4="/fotos1/nuevo.jpeg"
+              img5="/fotos1/dos.jpeg"
+            />
+          </div> -->
+          <ul class="list-disc list-inside space-y-1 pt-10">
+            <p class="text-xl">Cambiamos vidas, mejoramos futuros</p>
+          </ul>
+        </section>
+
+        <!-- Lado derecho: 1/3 del ancho -->
+        
+      </div>
+      <div
+          class=" lg:w-1/3 relative z-10 flex items-center justify-center mt-4 lg:mt-42"
+        >
+          <section
+            class="w-[90%] lg:w-[70%] mx-auto px-4 text-gray-800 space-y-6 lg:space-y-10"
+          >
+            <Contacto />
+          </section>
+      </div>
+    </article>
+
+    <!-- Asegurarse de que el pie de página esté al final -->
+    <div class="mt-20 lg:mt-40"></div>
+
+    <Dfooter />
+  </section>
+</Layout>

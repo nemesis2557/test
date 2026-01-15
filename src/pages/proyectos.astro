@@ -1,0 +1,47 @@
+---
+import Cartas from '../components/Cartas.astro';
+import Efotos from '../components/Efotos.astro';
+import Sheader from '../components/Sheader.astro';
+import Layout from '../layouts/Layout.astro';
+import Dfooter from '../components/Dfooter.astro';
+import Contacto from '../components/Contacto.astro';
+import Es from '../components/Es.astro';
+---
+<Layout>
+    <div class="h-1/3">
+      <Sheader />
+    </div>
+  
+    <section>
+      <article class="flex flex-col lg:flex-row min-h-screen items-start ">
+        <!-- Lado izquierdo -->
+        <div class="w-full lg:w-2/3 relative z-10 px-4 lg:px-20 py-4">
+          
+          <Es></Es>
+
+        <!--   <Efotos 
+            title="Construyendo futuros más brillantes "
+            body=""
+            textcolor="text-black"
+            img4="/fotos/dos.jpg"
+            img1="/fotos/tres.jpg"
+            img2="/fotos/cuatro.jpg"
+            img3="/fotos/cinco.jpg"
+            img='/fotos1/quince.jpeg'
+            img5='/fotos1/tres.jpeg'
+          /> -->
+          
+        </div>
+  
+        <!-- Lado derecho -->
+        <div class="w-full lg:w-1/3 relative z-10 flex items-center justify-center px-4 py-6 lg:mt-42">
+          <section class="w-full max-w-md mx-auto text-gray-800 space-y-10">
+           <Contacto></Contacto>
+          </section>
+        </div>
+      </article>
+    </section>
+  
+    <Dfooter />
+  </Layout>
+  

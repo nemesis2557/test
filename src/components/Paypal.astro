@@ -1,0 +1,42 @@
+---
+
+---
+
+<div id="paypal-container-WLGBYHEY76EZJ"></div>
+
+<script is:inline>
+  function renderPaypalButton() {
+    // @ts-ignore
+    paypal.HostedButtons({
+      hostedButtonId: "WLGBYHEY76EZJ",
+    }).render("#paypal-container-WLGBYHEY76EZJ");
+  }
+
+  if (window.paypal) {
+    // SDK ya cargado, renderizar de inmediato
+    renderPaypalButton();
+  } else {
+    // Cargar SDK
+    const script = document.createElement("script");
+    script.src = "https://www.paypal.com/sdk/js?client-id=BAAHcjOfq-n1OIlG_90ko3y44BR5s9Gm06-K7BCPF69pWzf56TdWr8QjAEDm__FwBikFmoZWSYhpEgoSIc&components=hosted-buttons&disable-funding=venmo&currency=USD";
+    script.onload = renderPaypalButton;
+    document.body.appendChild(script);
+  }
+</script>
+
+<!-- 
+<div id="paypal-container-WLGBYHEY76EZJ"></div>
+
+
+<script is:inline>
+  // Cargar el SDK de PayPal dinámicamente
+  const script = document.createElement("script");
+  script.src = "https://www.paypal.com/sdk/js?client-id=BAAHcjOfq-n1OIlG_90ko3y44BR5s9Gm06-K7BCPF69pWzf56TdWr8QjAEDm__FwBikFmoZWSYhpEgoSIc&components=hosted-buttons&disable-funding=venmo&currency=USD";
+  script.onload = () => {
+    // @ts-ignore
+    paypal.HostedButtons({
+      hostedButtonId: "WLGBYHEY76EZJ",
+    }).render("#paypal-container-WLGBYHEY76EZJ");
+  };
+  document.body.appendChild(script);
+</script> -->

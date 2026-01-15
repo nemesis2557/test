@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+    img:string;
+    textcolor:string;
+}
+
+const { href, title, body ,img,textcolor} = Astro.props;
+---
+
+
+
+<article class={textcolor} style="padding-bottom: 20px;">
+    <a href={href} class="block group transform transition-transform duration-300 hover:scale-105 pb-0 rounded-lg md:px-6">
+        <!-- Imagen destacada -->
+        <div
+            class={`${img} relative overflow-hidden rounded-lg shadow-lg`}
+            style="height: 400px; background-size: cover; background-position: center; background-repeat: no-repeat;">
+            
+            <!-- Gradiente elegante -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            <!-- Contenido textual -->
+            <div class="absolute inset-0 flex flex-col justify-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h1 class="text-3xl font-bold drop-shadow-md mb-2 text-center underline">{title}</h1>
+                <p class="text-sm bg-white/80 text-black px-4 py-2 rounded-lg font-medium text-center">{body}</p>
+            </div>
+        </div>
+    </a>
+</article>
