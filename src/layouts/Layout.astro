@@ -1,5 +1,6 @@
 ---
 import Floro from "../components/Floro.astro"
+import LanguageSwitcher from "../components/LanguageSwitcher.astro"
 import "../styles/global.css"
 ---
 
@@ -13,9 +14,287 @@ import "../styles/global.css"
 		<title>ANDEAN CHRISTIAN CHILDREN</title>
 	</head>
 	<body>
+		<LanguageSwitcher />
 		<slot />
+		<Floro />
+		<script is:inline>
+			const translations = {
+				es: {
+					"site.title": "ANDEAN CHRISTIAN CHILDREN",
+					"nav.home": "Inicio",
+					"nav.donate": "Donar",
+					"nav.sponsor": "Apadrinar",
+					"nav.projects": "Proyectos",
+					"nav.about": "Sobre Nosotros",
+					"hero.tagline": "“Cambiamos vidas, mejoramos futuros”",
+					"hero.subtitle":
+						"Tus Donaciones pueden cambiar la vida de los niños cristianos de los andes en Perú",
+					"home.intro":
+						"Somos una ONG responsable con el bien social y nuestra comunidad. Intentamos compartir lo que con esfuerzo, sacrificio y mucho trabajo logramos conseguir de nuestros donadores. Agradecemos a la fundación Childrensfund.net y CEO Sherlie Scribner en USA, diacono Francis Tran, Yeny Salazar Menacho representante y gerente de nuestra ONG y Abraham Naveros Córdova. Sin ellos nada de esto sería posible. Agradecemos a nuestros donadores por permitirnos ser parte de labores solidarias que ayudan a mejorar la calidad de vida de los niños y niñas beneficiarias de nuestros proyectos. El principal valor de nuestra empresa es la SOLIDARIDAD, con ese objetivo apelamos a su espíritu solidario para juntos llevar ayuda a los niños cristianos de los andes de Perú.",
+					"home.mission.title": "MISIÓN",
+					"home.mission.body":
+						"Mejorar la condición y calidad de vida de niños y niñas vulnerables; enfocándonos en su educación, salud y nutrición; inculcando formación personal, humana y espiritual a sus padres, madres y apoderados.",
+					"home.vision.title": "VISIÓN",
+					"home.vision.body":
+						"Ampliar el número de beneficiarios de nuestros programas que permita mejores oportunidades de superación para niños y niñas vulnerables en los andes peruanos.",
+					"home.values.title": "VALORES",
+					"home.values.body": "Caridad, amor, compasión, servicio, empatía y entrega",
+					"home.donation.callout":
+						"Tus Donaciones pueden cambiar la vida de los niños cristianos de los andes en Perú.",
+					"about.title": "Sobre Nosotros",
+					"about.history.title": "HISTORIA",
+					"about.history.body":
+						"Nuestra ONG tiene sus orígenes allá por el año 2014, cuando año a año llevamos alegría a niños de zonas inhóspitas y extrema pobreza de Andahuaylas. Juguetes, shows infantiles, útiles escolares y ropa. Llegado la pandemia, nuestra labor consistió en llevar alimentos no perecibles a decenas de familias vulnerables. Luego quisimos dar el siguiente paso con la formalización de la caridad y constituir una ONG con el apoyo de Mrs. Sherlie Ann Scribner, fundadora y CEO de Children’s Fund, además Lara Costello. De esta forma, hace 3 años constituimos notarialmente nuestra ONG la misma que fue inscrita en registros públicos. Francis Tran, Yeny Salazar Menacho, Abraham Naveros Córdova, Rvdo Padre Vidal párroco de Pampachiri, la Priora Madre Ángeles de la congregación Corazón de María, y algunos laicos católicos; consolidamos las normas y cultura organizacional de nuestra ONG, teniendo como prioridad los niños, su educación, salud y nutrición como punto de partida. En Marzo del 2025 la ONG se estableció en los Estados Unidos con el apoyo del Diacono Francis Tran. Desde entonces seguimos trabajando de a poco y gracias a la donación de personas solidarias que apadrinan a más de 40 niños y niñas a quienes ayudamos mes a mes religiosamente. Agradecemos a la Hna Nélida por su colaboración con nuestra ONG.",
+					"about.goals.title": "Objetivos",
+					"about.goals.body":
+						"Forjar mejores oportunidades de crecimiento académico y proyecciones de vida; proveyendo a los niños y niñas herramientas básicas para una educación adecuada para el éxito, fortaleciendo la parte psicológica, valores y sostenibilidad económica de las familias beneficiadas.",
+					"about.financial.title": "Información Financiera",
+					"about.financial.link": "📄 Click aquí para ver el reporte IRS más reciente",
+					"gallery.title": "Galería",
+					"sponsor.title": "APADRINAR",
+					"sponsor.body":
+						"Convertirte en patrocinador o padrino te permite ayudar a niños y niñas muy vulnerables en zonas aledañas a los distrito de San Jerónimo, Pampachiri, Oronccoy y lugares inhóspitos de la provincia de Andahuaylas, departamento Apurímac en Perú. Somos una ONG registrada en Perú y Estados Unidos y todas sus donaciones son deducibles de impuestos. Comprométete a una donación mensual de al menos $25.00 dólares y recibirás evidencias periódicas con información actualizada sobre los niños que apadrina. Para esto, Ud. recibirá una ficha en donde detallamos la historia, datos personales, fotos e información necesaria que le permita conocer las condiciones reales de vida de cada niño que espera por su donación. Si no desea comprometerse con una donación mensual, podría ayudarnos con alguna donación voluntaria y/o bienes, los cuales serán destinados a adquirir alimento, ropa, camas, colchones, frazadas y mejorar la calidad de vida de uno de los niños o niñas con los que trabajamos; compra que será evidenciada con fotos que serán enviadas al donador. Hecho la donación, recibirás una carta de agradecimiento y evidencia fotográfica que demuestra el destino de su donación. Agradecemos su apoyo a nuestros niños y niñas en los Andes peruanos que son entregadas íntegramente a sus padres o apoderados. Nuestras oraciones están con ustedes y sus seres queridos.",
+					"sponsor.contact":
+						"Contáctate con nosotros al correo, teléfono o email y solicite información adicional y ayúdenos a ayudar.",
+					"sponsor.tax":
+						"<strong>Andean Christian Children</strong> es una organización registrada en Perú y Estados Unidos, y todas las donaciones son deducibles de impuestos.",
+					"sponsor.choose": "Elige el tipo de patrocinador que deseas ser:",
+					"sponsor.peru":
+						"<strong>PERÚ</strong><br />Jr. Bolognesi 514<br />San Jerónimo - Andahuaylas - Apurímac",
+					"sponsor.usa":
+						"<strong>ESTADOS UNIDOS</strong><br />Andean Christian Children<br />329 Bishops Highway Kingston, MA 02365<br />7270 Pierson Driver Mobile, AL 36619",
+					"sponsor.receipt":
+						"Recibirás una carta con el recibo de impuestos. Muchas gracias por tu apoyo a nuestros niños y sus familias en los Andes peruanos. Nuestras oraciones están con ustedes y sus seres queridos.",
+					"sponsor.footer": "Cambiamos vidas, mejoramos futuros",
+					"projects.title": "Nuestros Proyectos",
+					"projects.running": "PROYECTOS EN EJECUCION",
+					"projects.intro":
+						"Nuestra ONG viene trabajando silenciosamente desde hace más de 5 años en proyectos que tienen como objetivo mejorar las oportunidades de crecimiento académico, social, personal y económico de los niños beneficiarios:",
+					"projects.one.title": "PROYECTO 1: Apadrinamiento",
+					"projects.one.body":
+						"Apadrinamiento de niños de 0 a 17 años, quienes reciben propinas desde $25 dólares a más – según voluntad del padrino o patrocinador – mensuales, dinero que es invertido en la educación, alimentación, salud y necesidades básicas de los niños (salud, educación y nutrición). Inversión que es constatada con fotos las cuales son enviadas a sus padrinos generándose vínculos de amistad y familiaridad entre ellos.",
+					"projects.two.title": "PROYECTO 2: Alimentación y nutrición temprana",
+					"projects.two.body":
+						"Mejorar la alimentación y nutrición de niños de 0 a 5 años, con la entrega de suplementos alimenticios y vitaminas mensualmente; proyecto que se hace el seguimiento mensual para conocer las mejoras alimenticias según los análisis de sangre que solicitamos periódicamente.",
+					"projects.three.title": "PROYECTO 3: Formación Personal",
+					"projects.three.body":
+						"Talleres de mejora personal, asesoramiento, guía a padres y apoderados en temas psicológicos, buenos hábitos, emprendimiento, salud reproductiva, organización del hogar, empoderamiento, deberes y derechos de las personas",
+					"projects.four.title": "PROYECTO 4: Programas de Verano",
+					"projects.four.body":
+						"Nivelación, talleres, reforzamiento y nivelación a los niños en asignaturas escolares, habilidades blandas, arte, recreación y cultura.",
+					"projects.house.title":
+						"CONSTRUCCIÓN DE LA CASA DOCENTE EN HUACCOTO - PAMPACHIRI",
+					"projects.erika.title": "ERIKA",
+					"projects.erika.subtitle": "APADRINAMIENTO TOTAL A FAMILIA DE ERIKA",
+					"projects.erika.body":
+						"Con educación, alimentación, compra de audífonos medicados y todos los gastos que involucra la educación y salud de su familia.",
+					"projects.school.title":
+						"PROYECTOS CULMINADOS - ENTREGA DE UTILES ESCOLARES",
+					"projects.school.body":
+						"Al comienzo del año escolar ayuda con todos los útiles escolares, uniforme, zapatos y zapatillas a más de 300 niños.",
+					"projects.homes.title":
+						"PROYECTOS CULMINADOS - MEJORAMIENTO DE VIVIENDAS",
+					"projects.homes.body":
+						"Mejoramiento y construcción de viviendas de dos familias.",
+					"donate.title": "DONAR",
+					"donate.intro":
+						"Las donaciones hechas para la ONG benefician directamente a los niños y familias más pobres de los Andes peruanos. Vea cómo donar en línea con PayPal o tarjeta de crédito.",
+					"donate.tax":
+						"Niños Cristianos Andinos es una organización registrada en Peru y Estados Unidos y todas las donaciones son deducibles de impuestos.",
+					"donate.entity": "<strong>ANDEAN CHRISTIAN CHILDREN:</strong>",
+					"donate.usa.title": "DONAR DESDE USA",
+					"donate.usa.note": "Numero de cuenta en estados unidos",
+					"donate.usa.name": "Andean Christian Children",
+					"donate.usa.tax": "Tax-ID Number: 33-3542417",
+					"donate.usa.account": "Regions Bank Account Number: 006761965001",
+					"donate.paypal.title": "DONAR DESDE PAYPAL",
+					"donate.peru.title": "DONAR DESDE PERÚ",
+					"donate.qr": "Código QR",
+					"donate.footer": "Cambiamos vidas, mejoramos futuros",
+					"contact.title": "Contáctanos",
+					"contact.us.title": "ESTADOS UNIDOS",
+					"contact.us.address": "Dirección postal",
+					"contact.us.or": "OR",
+					"contact.us.email": "Correos Electronicos en USA",
+					"contact.us.phones": "Telefonos en USA",
+					"contact.pe.title": "PERU",
+					"contact.pe.address": "Dirección postal",
+					"contact.pe.email": "Correo electrónico",
+					"contact.pe.phone": "Teléfono",
+					"contact.about.label": "Sobre este sitio",
+					"contact.about.body":
+						"Andean Christian Children es una organización benéfica 501(c)(3) operada por un grupo de voluntarios que marcan la diferencia en la vida de los niños en los Andes peruanos. Te invitamos a unirte a nosotros.",
+					"contact.about.ein": "EIN # 33 – 3542417",
+				},
+				en: {
+					"site.title": "ANDEAN CHRISTIAN CHILDREN",
+					"nav.home": "Home",
+					"nav.donate": "Donate",
+					"nav.sponsor": "Sponsor",
+					"nav.projects": "Projects",
+					"nav.about": "About Us",
+					"hero.tagline": "“We change lives, we improve futures”",
+					"hero.subtitle":
+						"Your donations can change the lives of Christian children in the Andes of Peru",
+					"home.intro":
+						"We are an NGO committed to social good and our community. We strive to share what, through effort, sacrifice, and hard work, we have been able to raise from our donors. We thank the Childrensfund.net foundation and CEO Sherlie Scribner in the USA, Deacon Francis Tran, Yeny Salazar Menacho, the representative and manager of our NGO, and Abraham Naveros Córdova. None of this would be possible without them. We also thank our donors for allowing us to be part of solidarity work that improves the quality of life of the children who benefit from our projects. The core value of our organization is SOLIDARITY, and with that goal we appeal to your spirit of giving so that together we can help Christian children in the Andes of Peru.",
+					"home.mission.title": "MISSION",
+					"home.mission.body":
+						"Improve the living conditions and quality of life of vulnerable boys and girls; focusing on their education, health, and nutrition; and fostering personal, human, and spiritual formation for their parents and guardians.",
+					"home.vision.title": "VISION",
+					"home.vision.body":
+						"Expand the number of beneficiaries in our programs to provide better opportunities for vulnerable boys and girls in the Peruvian Andes.",
+					"home.values.title": "VALUES",
+					"home.values.body": "Charity, love, compassion, service, empathy, and dedication",
+					"home.donation.callout":
+						"Your donations can change the lives of Christian children in the Andes of Peru.",
+					"about.title": "About Us",
+					"about.history.title": "HISTORY",
+					"about.history.body":
+						"Our NGO traces its origins back to 2014, when year after year we brought joy to children in remote and extremely poor areas of Andahuaylas—through toys, children’s shows, school supplies, and clothing. During the pandemic, our work consisted of delivering non-perishable food to dozens of vulnerable families. Then we wanted to take the next step by formalizing our charity and constituting an NGO with the support of Mrs. Sherlie Ann Scribner, founder and CEO of Children’s Fund, as well as Lara Costello. In this way, three years ago we legally established our NGO and registered it in public records. Francis Tran, Yeny Salazar Menacho, Abraham Naveros Córdova, Rev. Father Vidal, parish priest of Pampachiri, Mother Ángeles of the Heart of Mary congregation, and some Catholic laypeople consolidated our organizational standards and culture, prioritizing children, their education, health, and nutrition. In March 2025 the NGO was established in the United States with the support of Deacon Francis Tran. Since then we have continued working little by little, and thanks to the donations of generous people who sponsor more than 40 boys and girls, we help them month by month. We thank Sister Nélida for her collaboration with our NGO.",
+					"about.goals.title": "Goals",
+					"about.goals.body":
+						"Provide better opportunities for academic growth and life projection by giving boys and girls the basic tools for a successful education, strengthening psychological well-being, values, and the economic sustainability of beneficiary families.",
+					"about.financial.title": "Financial Information",
+					"about.financial.link": "📄 Click here to view the most recent IRS report",
+					"gallery.title": "Gallery",
+					"sponsor.title": "SPONSOR",
+					"sponsor.body":
+						"Becoming a sponsor allows you to help very vulnerable boys and girls in districts near San Jerónimo, Pampachiri, Oronccoy, and remote areas of the province of Andahuaylas, Apurímac in Peru. We are an NGO registered in Peru and the United States, and all donations are tax-deductible. Commit to a monthly donation of at least $25.00 and you will receive periodic updates with information about the children you sponsor. You will receive a profile with their story, personal data, photos, and information to understand their living conditions. If you prefer not to commit to a monthly donation, you can support us with a voluntary donation and/or goods to purchase food, clothing, beds, mattresses, blankets, and improve quality of life for the children we serve; purchases will be documented with photos sent to the donor. After making a donation, you will receive a thank-you letter and photographic evidence of how your donation was used. We appreciate your support for our boys and girls in the Peruvian Andes, delivered fully to their parents or guardians. Our prayers are with you and your loved ones.",
+					"sponsor.contact":
+						"Contact us by email or phone to request additional information and help us help others.",
+					"sponsor.tax":
+						"<strong>Andean Christian Children</strong> is an organization registered in Peru and the United States, and all donations are tax-deductible.",
+					"sponsor.choose": "Choose the type of sponsor you want to be:",
+					"sponsor.peru":
+						"<strong>PERU</strong><br />Jr. Bolognesi 514<br />San Jerónimo - Andahuaylas - Apurímac",
+					"sponsor.usa":
+						"<strong>UNITED STATES</strong><br />Andean Christian Children<br />329 Bishops Highway Kingston, MA 02365<br />7270 Pierson Driver Mobile, AL 36619",
+					"sponsor.receipt":
+						"You will receive a tax receipt letter. Thank you very much for your support of our children and their families in the Peruvian Andes. Our prayers are with you and your loved ones.",
+					"sponsor.footer": "We change lives, we improve futures",
+					"projects.title": "Our Projects",
+					"projects.running": "ONGOING PROJECTS",
+					"projects.intro":
+						"Our NGO has been working quietly for more than 5 years on projects that aim to improve the academic, social, personal, and economic opportunities of beneficiary children:",
+					"projects.one.title": "PROJECT 1: Sponsorship",
+					"projects.one.body":
+						"Sponsorship of children ages 0 to 17 who receive monthly stipends starting at $25 dollars or more—depending on the sponsor’s willingness—funds that are invested in the children’s education, food, health, and basic needs (health, education, and nutrition). This investment is documented with photos that are sent to sponsors, creating bonds of friendship and familiarity.",
+					"projects.two.title": "PROJECT 2: Early nutrition and nourishment",
+					"projects.two.body":
+						"Improve the nutrition of children ages 0 to 5 by providing monthly dietary supplements and vitamins; the project includes monthly follow-ups to track nutritional improvements based on blood tests we request periodically.",
+					"projects.three.title": "PROJECT 3: Personal Development",
+					"projects.three.body":
+						"Workshops on personal growth, counseling, guidance to parents and guardians on psychological topics, good habits, entrepreneurship, reproductive health, household organization, empowerment, and rights and responsibilities.",
+					"projects.four.title": "PROJECT 4: Summer Programs",
+					"projects.four.body":
+						"Leveling, workshops, reinforcement, and tutoring in school subjects, soft skills, art, recreation, and culture.",
+					"projects.house.title":
+						"CONSTRUCTION OF THE TEACHERS' HOUSE IN HUACCOTO - PAMPACHIRI",
+					"projects.erika.title": "ERIKA",
+					"projects.erika.subtitle": "FULL SPONSORSHIP FOR ERIKA'S FAMILY",
+					"projects.erika.body":
+						"Providing education, food, hearing aids, and all expenses involved in the education and health of her family.",
+					"projects.school.title":
+						"COMPLETED PROJECTS - DELIVERY OF SCHOOL SUPPLIES",
+					"projects.school.body":
+						"At the start of the school year we provide school supplies, uniforms, shoes, and sneakers to more than 300 children.",
+					"projects.homes.title":
+						"COMPLETED PROJECTS - HOME IMPROVEMENT",
+					"projects.homes.body": "Improvement and construction of homes for two families.",
+					"donate.title": "DONATE",
+					"donate.intro":
+						"Donations made to the NGO directly benefit the poorest children and families in the Peruvian Andes. See how to donate online with PayPal or a credit card.",
+					"donate.tax":
+						"Niños Cristianos Andinos is an organization registered in Peru and the United States and all donations are tax-deductible.",
+					"donate.entity": "<strong>ANDEAN CHRISTIAN CHILDREN:</strong>",
+					"donate.usa.title": "DONATE FROM THE USA",
+					"donate.usa.note": "Bank account number in the United States",
+					"donate.usa.name": "Andean Christian Children",
+					"donate.usa.tax": "Tax-ID Number: 33-3542417",
+					"donate.usa.account": "Regions Bank Account Number: 006761965001",
+					"donate.paypal.title": "DONATE WITH PAYPAL",
+					"donate.peru.title": "DONATE FROM PERU",
+					"donate.qr": "QR Code",
+					"donate.footer": "We change lives, we improve futures",
+					"contact.title": "Contact us",
+					"contact.us.title": "UNITED STATES",
+					"contact.us.address": "Mailing address",
+					"contact.us.or": "OR",
+					"contact.us.email": "Email addresses in the USA",
+					"contact.us.phones": "Phone numbers in the USA",
+					"contact.pe.title": "PERU",
+					"contact.pe.address": "Mailing address",
+					"contact.pe.email": "Email",
+					"contact.pe.phone": "Phone",
+					"contact.about.label": "About this site",
+					"contact.about.body":
+						"Andean Christian Children is a 501(c)(3) charity operated by a group of volunteers who are making a difference in the lives of children in the Peruvian Andes. We invite you to join us.",
+					"contact.about.ein": "EIN # 33 – 3542417",
+				},
+			};
+
+			const languageButtons = document.querySelectorAll("[data-lang]");
+			const modalButtons = document.querySelectorAll("[data-lang-modal]");
+			const languageModal = document.getElementById("language-modal");
+
+			const applyLanguage = (lang) => {
+				const selected = translations[lang] ? lang : "es";
+				document.documentElement.lang = selected;
+				document.title = translations[selected]["site.title"] ?? document.title;
+
+				document.querySelectorAll("[data-i18n]").forEach((el) => {
+					const key = el.getAttribute("data-i18n");
+					const value = translations[selected][key];
+					if (value) {
+						el.textContent = value;
+					}
+				});
+
+				document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+					const key = el.getAttribute("data-i18n-html");
+					const value = translations[selected][key];
+					if (value) {
+						el.innerHTML = value;
+					}
+				});
+
+				languageButtons.forEach((button) => {
+					const isActive = button.getAttribute("data-lang") === selected;
+					button.setAttribute("aria-pressed", isActive ? "true" : "false");
+					button.classList.toggle("bg-gray-900", isActive);
+					button.classList.toggle("text-white", isActive);
+					button.classList.toggle("border-gray-900", isActive);
+				});
+
+				localStorage.setItem("language", selected);
+			};
+
+			languageButtons.forEach((button) => {
+				button.addEventListener("click", () => {
+					applyLanguage(button.getAttribute("data-lang"));
+				});
+			});
+
+			modalButtons.forEach((button) => {
+				button.addEventListener("click", () => {
+					applyLanguage(button.getAttribute("data-lang-modal"));
+					if (languageModal) {
+						languageModal.classList.add("hidden");
+						languageModal.classList.remove("flex");
+					}
+				});
+			});
+
+			const storedLanguage = localStorage.getItem("language");
+			if (storedLanguage) {
+				applyLanguage(storedLanguage);
+			} else if (languageModal) {
+				languageModal.classList.remove("hidden");
+				languageModal.classList.add("flex");
+			}
+		</script>
 	</body>
-	<Floro/>
 </html>
 
 <style>
